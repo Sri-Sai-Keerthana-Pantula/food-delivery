@@ -1,37 +1,3 @@
-// 'use strict';
-// const {
-//   Model
-// } = require('sequelize');
-// module.exports = (sequelize, DataTypes) => {
-//   class Pricing extends Model {
-//     /**
-//      * Helper method for defining associations.
-//      * This method is not a part of Sequelize lifecycle.
-//      * The `models/index` file will call this method automatically.
-//      */
-//     static associate(models) {
-//       // define association here
-//     }
-//   }
-//   Pricing.init({
-//     organizationId: DataTypes.INTEGER,
-//     item_id: DataTypes.INTEGER,
-//     zone: DataTypes.STRING,
-//     base_distance_in_km: DataTypes.FLOAT,
-//     km_price: DataTypes.FLOAT,
-//     fix_price: DataTypes.INTEGER
-//   }, {
-//     sequelize,
-//     modelName: 'Pricing',
-//   });
-//   return Pricing;
-// };
-
-
-
-
-
-
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('food', 'postgres', 'Admin', {
   dialect: 'postgres',
@@ -62,20 +28,20 @@ const Pricing = sequelize.define('pricing', {
         allowNull: false
     },
     km_price: {
-      type: DataTypes.FLOAT, // Assuming price can have decimals
+      type: DataTypes.FLOAT, 
       allowNull: false,
-      defaultValue: 1.5 // Set default value to 1.5
+      defaultValue: 1.5 
     },
     fix_price: {
       type: DataTypes.FLOAT,
       allowNull: false,
-      defaultValue: 10 // Set default value to 10
+      defaultValue: 10 
   }
     },
 
     {
       tableName: 'pricing',
-      timestamps: false // Disable timestamps
+      timestamps: false 
   });
   
 

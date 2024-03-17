@@ -1,6 +1,5 @@
-// test/pricing.test.js
 const request = require('supertest');
-const app = require('../app'); // Assuming your Express app is exported from app.js
+const app = require('../app');
 
 describe('Pricing Route', () => {
     it('should calculate price and return 200 OK', async () => {
@@ -14,7 +13,6 @@ describe('Pricing Route', () => {
             });
         expect(res.statusCode).toEqual(200);
         expect(res.body).toHaveProperty('total_price');
-        // Add more assertions based on your expected response
     });
 
     it('should return 400 Bad Request for invalid input', async () => {
