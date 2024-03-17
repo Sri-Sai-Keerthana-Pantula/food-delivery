@@ -14,7 +14,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 const pricingRoutes = require('./routes/pricing');
 app.use('/pricing', pricingRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 1000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 module.exports = app;
