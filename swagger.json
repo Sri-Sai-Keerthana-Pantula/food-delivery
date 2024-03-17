@@ -24,16 +24,20 @@
                 "type": "object",
                 "properties": {
                   "zone": {
-                    "type": "string"
+                    "type": "string",
+                    "example":"central"
                   },
                   "organization_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "005"
                   },
                   "total_distance": {
-                    "type": "number"
+                    "type": "number",
+                    "example": 12
                   },
                   "item_type": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "perishable"
                   }
                 }
               }
@@ -46,20 +50,33 @@
                 "type": "object",
                 "properties": {
                   "total_price": {
-                    "type": "number"
+                    "type": "number",
+                    "example": "20.5"
                   }
                 }
               }
             },
             "400": {
-              "description": "Bad request"
+              "description": "Bad request",
+              "examples": {
+                "invalidOrganizationId": {
+                  "message": "Invalid organization ID provided."
+                },
+                "invalidItemType": {
+                  "message": "Invalid item type provided."
+                }
+              }
             },
             "500": {
-              "description": "Internal server error"
+              "description": "Internal server error",
+              "examples": {
+                "serverError": {
+                  "message": "An unexpected server error occurred."
+                }
+              }
             }
           }
         }
       }
     }
   }
-  
